@@ -1,0 +1,17 @@
+﻿@{
+    var htmlAttributes = new Dictionary<string, object>();
+
+    if (Model.Required == true) {
+        htmlAttributes["required"] = "required";
+    }
+
+    if (Model.AutoFocus == true) {
+        htmlAttributes["autofocus"] = "autofocus";
+    }
+
+    if (!String.IsNullOrEmpty(Model.Placeholder)) {
+        htmlAttributes["placeholder"] = Model.Placeholder;
+    }
+}
+
+@Html.TextArea("Text", (string)Model.Text, 25, 80, htmlAttributes)
